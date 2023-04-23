@@ -1,38 +1,761 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    scroll-behavior: smooth !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html,
+body {
+    height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+div#root {
+    height: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.navbar-toggler,
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 28 28' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(225, 225, 225)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header {
+    background: url('../src/assets/images/banner.png.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 850px;
+}
+
+.header-content {
+    padding-top: 13rem;
+}
+
+.header-overlay {
+    background-color: rgba(4, 14, 39, .7);
+}
+
+.navbar-menu-list .nav-link {
+    color: #fff;
+    font-size: 1.1rem;
+    margin: 0 1rem;
+    cursor: pointer;
+}
+
+.navbar-menu-list .nav-link:hover {
+    color: #33D4D6;
+}
+
+.apply-btn {
+    color: #fff;
+    transition: 0.3s all;
+}
+
+.apply-btn:hover {
+    background-color: #33D4D6;
+    color: #fff !important;
+}
+
+.finloans-navbar {
+    margin-bottom: 5.5rem;
+    transition: 0.7s all;
+    padding: 1.5rem 4rem !important;
+}
+
+.banner-title {
+    font-size: 4.15rem;
+    margin-bottom: 4rem;
+    line-height: 1.15;
+}
+
+.work-btn {
+    background-color: #33D4D6;
+    transition: 0.3s all;
+    font-size: 1.1rem;
+    padding: .8rem 1.2rem;
+}
+
+.work-btn:hover {
+    background-color: rgb(15, 168, 198);
+}
+
+.container-spacing {
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+}
+
+.loan-form {
+    padding: 3.5rem 2rem;
+}
+
+.loan-form-desc {
+    font-size: 1.1rem;
+    color: #7A838B;
+}
+
+.register-form-select {
+    outline: none;
+}
+
+.register-form-select {
+    appearance: none;
+}
+
+.register-form-select:focus {
+    border: 1px solid rgba(0, 0, 0, 0.42);
+    outline: none;
+}
+
+.register-form-select {
+    padding: .7rem .8rem;
+    transition: .3s all;
+    color: #7A838B;
+    border: 1px solid #dee2e6;
+    cursor: pointer;
+}
+
+.amount-pay-text {
+    color: #7A838B;
+    font-size: 1.1rem;
+    margin: 2.5rem 0 !important;
+}
+
+.pay-amount-btn {
+    background: #33D4D6;
+    color: #fff;
+    outline: none;
+    border: none;
+    padding: .9rem;
+    transition: .3s all;
+}
+
+.pay-amount-btn:hover {
+    background-color: rgb(15, 168, 198);
+}
+
+.offer-service-spacing {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+}
+
+.offer-title-border-top {
+    background: #33D4D6;
+    width: 60px;
+    height: 3px;
+    border-radius: 2px;
+    margin-bottom: 4px;
+}
+
+.offer-title {
+    font-size: 3rem;
+}
+
+.offer-description {
+    font-size: 1.1rem;
+    color: #7A838B;
+}
+
+.offer-service {
+    background: linear-gradient(to bottom, #0a8cff 0%, #054680 100%);
+}
+
+.dropdown-select-arrow {
+    color: #AAB1B7;
+}
+
+.offer-service-item {
+    font-size: 1.1rem;
+    list-style-type: none;
+    padding-left: 0 !important;
+}
+
+.offer-service-item>li::before {
+    content: "\2022";
+    color: #33D4D6;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 1.6rem;
+    margin: 0rem 1rem 0 0;
+}
+
+.offer-service-item-container {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 1.7rem;
+}
+
+.service-loan {
+    font-size: 1.2rem;
+    margin: 2.5rem 0 .6rem;
+}
+
+.service-amount {
+    color: #33D4D6;
+    margin: .9rem 0 1.7rem;
+}
+
+.offer-apply-btn {
+    padding: .8rem;
+    background: #33D4D6;
+    transition: .3s all;
+}
+
+.offer-apply-btn:hover {
+    background: transparent;
+    border: 1px solid #33D4D6;
+}
+
+.about-work-btn {
+    width: 110px;
+}
+
+.about-title {
+    font-size: 3rem;
+}
+
+.about-description {
+    color: #7A838B;
+    font-size: 1.05rem;
+}
+
+.about-list-item {
+    font-size: 1.12rem;
+}
+
+.work-section {
+    background: #F5FBFF;
+    margin-top: 6rem;
+}
+
+.work-item-number {
+    width: 72px;
+    height: 72px;
+    background: #DDF0FF;
+    color: #0A8CFF;
+}
+
+.work-item-title {
+    font-size: 1.65rem;
+}
+
+.work-item-description {
+    font-size: 1.1rem;
+    color: #7A838B;
+}
+
+.faq-question {
+    font-size: 1.12rem;
+}
+
+.faq-title {
+    font-size: 3rem;
+}
+
+.faq-container {
+    cursor: pointer;
+    border-bottom: 1px solid #E8E8E8;
+    width: 75%;
+}
+
+.faq-anwser {
+    font-size: 1rem;
+    color: #727272;
+    padding: .5rem 2rem;
+}
+
+.accordion-collapse-header {
+    background: transparent;
+    border: none;
+}
+
+.card-header {
+    background: transparent;
+}
+
+#accordion-header {
+    background-color: transparent;
+    border: none;
+    padding: 0.8rem 0 0;
+}
+
+.accordion .card {
+    border: none;
+}
+
+.accordion .card-body {
+    padding: 0 2rem 1rem;
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+}
+
+.testimonial-author {
+    color: #7A838B;
+    font-size: 1.2rem;
+}
+
+.testimonial-section {
+    padding: 5rem 0;
+}
+
+.testimonial-img {
+    width: 200px;
+    height: 200px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    font-size: 50px !important;
+    opacity: 1 !important;
+    color: #95b5cd !important;
+}
+
+.testimonial-quote-container {
+    width: 45px;
+    height: 45px;
+    background-color: #0A8CFF;
+    color: #fff;
+    font-size: 2rem;
+    position: absolute;
+    right: 25%;
+    bottom: 0;
+    padding-top: 15px;
+}
+
+.apply-section {
+    padding: 200px 0;
+    background: url('../src/assets/images/loan.png.webp');
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.apply-section-overlay {
+    background: rgb(4, 14, 39, 0.4);
+}
+
+.sponsor-section {
+    margin: 4rem 0 6rem;
+}
+
+.apply-section-title {
+    font-size: 2.8rem;
+    color: #fff;
+}
+
+.apply-section-btn {
+    background: #33D4D6;
+    padding: 11px 29px 13px 29px;
+    font-size: 16px;
+    border: 0;
+    border: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.apply-section-btn:hover {
+    background-color: transparent;
+    border: 1px solid #33D4D6;
+}
+
+.footer {
+    padding: 7rem 0;
+}
+
+#footer-contact {
+    color: #7A838B;
+    line-height: .5;
+}
+
+.footer-social-links {
+    font-size: 1.5rem;
+    color: #7A838B;
+    border: 1px solid #7A838B;
+    transition: .3s all;
+    padding: .45rem;
+}
+
+.footer-social-links:hover {
+    background: #0A8CFF;
+    color: #fff;
+    border: 1px solid #0A8CFF;
+}
+
+.call-icon {
+    color: #33D4D6;
+}
+
+.footer-pages-links {
+    line-height: 2.5;
+}
+
+.footer-pages-links>a,
+.footer-pages-info {
+    text-decoration: none;
+    color: #7A838B !important;
+}
+
+.footer-pages-links>a:hover {
+    color: #000 !important;
+}
+
+.subscribe-container {
+    border: 1px solid #E8E8E8;
+}
+
+.subscribe-btn {
+    background: #0A8CFF;
+    padding: 10px 22px;
+    font-size: 14px;
+    color: #fff;
+    transition: .3s all;
+}
+
+.subscribe-btn:hover {
+    background: #0f6aba;
+}
+
+.subscribe-input-box:focus {
+    border: 0;
+    outline: 0;
+}
+
+.mobile-hamburger {
+    cursor: pointer;
+    font-size: 40px;
+    color: #F5FBFF;
+}
+
+.offcanvas-body,
+.offcanvas-header {
+    background-color: #F5FBFF;
+}
+
+.navbar-mobile-hamburger {
+    display: none;
+}
+
+.mobile-nav-link {
+    font-size: 1.15rem;
+    color: #000;
+    font-weight: 600;
+    display: block;
+    text-decoration: none;
+    margin-bottom: 1.3rem;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1425px) {
+    .col-expand {
+        width: 100% !important;
+    }
+}
+
+@media screen and (max-width: 1245px) {
+    .slick-next {
+        right: 45% !important;
+    }
+
+    .slick-prev {
+        left: 45% !important;
+    }
+
+    .slick-prev,
+    .slick-next {
+        top: 110% !important
+    }
+
+    .slick-dots {
+        display: none !important;
+    }
+
+    .sponsor-section {
+        margin: 5rem 0;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .container {
+        max-width: 100% !important;
+    }
+
+    .finloans-navbar {
+        padding: 1.5rem !important;
+    }
+
+    .loan-form-want-title {
+        font-size: 1.55rem;
+    }
+
+    .banner-title {
+        font-size: 3rem;
+    }
+
+    .loan-form {
+        padding: 3rem 1.5rem;
+    }
+
+    .offer-title,
+    .about-title,
+    .faq-title,
+    .testimonial-title {
+        font-size: 2rem;
+    }
+
+    .faq-container {
+        width: 90%;
+    }
+
+    .footer {
+        padding: 6rem 0 3rem;
+    }
+
+    .finloan-phone,
+    .call-icon {
+        display: none;
+    }
+}
+
+
+
+@media screen and (max-width: 992px) {
+    .offer-service {
+        margin-bottom: 2rem !important;
+    }
+
+    .why-choose-container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-top: 2rem !important;
+    }
+
+}
+
+@media screen and (max-width: 991px) {
+    .navbar-mobile-hamburger {
+        display: block;
+    }
+
+    .navbar-contact-menu,
+    .navbar-menu-list {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        height: auto;
+    }
+
+    .header-overlay {
+        padding-bottom: 3rem;
+    }
+
+    .loan-form {
+        margin-top: 4rem;
+    }
+
+    .header-content {
+        padding-top: 9rem;
+    }
+
+    #faq-all-question-container {
+        margin-top: 2.5rem;
+        padding-left: 1rem !important;
+    }
+
+    .faq-title {
+        margin-bottom: 1.2rem !important;
+    }
+
+    #accordion-header {
+        padding: 0.7rem 0 !important;
+    }
+
+    .offer-description {
+        width: 75%;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .faq-container {
+        width: 100%;
+    }
+
+    .banner-title {
+        margin-bottom: 2rem !important;
+    }
+
+    .offer-service-spacing {
+        padding-top: 3.5rem;
+        padding-bottom: 3.5rem;
+    }
+
+    .why-choose-container {
+        margin-top: 2rem;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .work-section {
+        margin-top: 2rem;
+    }
+
+    .apply-section-title {
+        font-size: 1.8rem;
+        text-align: center;
+        padding-top: 3rem;
+    }
+
+    .apply-section {
+        padding: 8rem 0;
+    }
+
+    .apply-section-btn-container {
+        padding-bottom: 3rem;
+    }
+
+    .slick-prev {
+        left: 35% !important;
+    }
+
+    .slick-next {
+        right: 35% !important;
+    }
+
+    #testimonial-text-container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .testimonial-container {
+        margin-top: 2.5rem !important;
+    }
+
+    .testimonial-quote-container {
+        display: none !important;
+    }
+
+    .slick-prev,
+    .slick-next {
+        top: 110% !important
+    }
+
+    .testimonial-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .testimonial-text {
+        font-size: 1rem;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+        font-size: 40px !important;
+    }
+
+    .sponsor-section {
+        margin: 3rem 0;
+    }
+
+    .footer {
+        padding: 4rem 0 3rem;
+    }
+
+    #footer-contact {
+        margin-top: 2rem !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .footer-column-each {
+        margin-bottom: 2.5rem;
+    }
+
+    .footer-pages-links,
+    .subscribe-container {
+        margin-top: 0 !important;
+        margin-bottom: 2.3rem !important;
+    }
+
+    .offer-service-spacing {
+        padding-bottom: 0rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .container,
+    .container-fluid,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl {
+        --bs-gutter-x: 0 !important;
+    }
+
+    .banner-title {
+        font-size: 2.5rem;
+    }
+
+    .loan-form {
+        padding: 1.5rem 1.2rem;
+    }
+
+    .offer-service-item-container {
+        padding: 1rem 1.5rem 0 !important;
+    }
+
+    .offer-title,
+    .about-title,
+    .faq-title,
+    .testimonial-title {
+        font-size: 1.8rem;
+    }
+
+    .work-item-title {
+        font-size: 1.45rem;
+    }
+
+    #faq-all-question-container {
+        padding-left: 0 !important;
+    }
+
+    .testimonial-quote-container {
+        right: 37%;
+        width: 30px;
+        height: 30px;
+        font-size: 1.15rem;
+        padding-top: .25rem;
+        text-align: center;
+        display: block !important;
+    }
+
+    .apply-section-title {
+        font-size: 1.5rem;
+    }
+
+    .col-lg-11 {
+        padding-left: 0.4rem !important;
+        padding-right: 0.4rem !important;
+    }
+
+    .finloans-navbar {
+        padding: 1rem 0.3rem 1rem 1rem !important;
+    }
+
+    .header-content {
+        padding-top: 7.5rem;
+    }
 }
