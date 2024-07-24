@@ -10,10 +10,10 @@ function OffCanvasExample({ name, ...props }) {
   window.onscroll = () => {
     if (window.scrollY > 1) {
       setNavbarScroll(true);
-      console.log(window.scrollY, navbarScroll);
+      // console.log(window.scrollY, navbarScroll);
     } else {
       setNavbarScroll(false);
-      console.log(window.scrollY, navbarScroll);
+      // console.log(window.scrollY, navbarScroll);
     }
   };
   const [show, setShow] = useState(false);

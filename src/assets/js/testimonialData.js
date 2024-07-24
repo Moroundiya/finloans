@@ -20,7 +20,7 @@ const testimonialData = [
     img: `${lekan}`,
     info: "Lendigo has really helped my business grow to a trusted e-commerce platform most FMCG companies want to work with. I truly appreciate the support I get from the Lendigo team.",
     authorName: "- Afolabi Olamilekan",
-  },
+  }
 ];
 
 export default testimonialData;
